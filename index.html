@@ -78,8 +78,10 @@
     background:conic-gradient(var(--red) 0deg, var(--red) var(--fill,0deg), rgba(23,19,13,0.12) var(--fill,0deg));
     border:2px solid var(--ink); box-shadow:3px 3px 0 var(--ink);
   }
-  .ring::before { content:''; position:absolute; inset:7px; background:var(--card); border-radius:50%; border:2px solid var(--ink); }
-  .ring b { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'Anton',sans-serif; font-size:1.05rem; letter-spacing:0.02em; }
+  .ring::before { content:''; position:absolute; inset:7px; background:var(--card); border-radius:50%; border:2px solid var(--ink); transition:transform 0.3s, box-shadow 0.3s; }
+  #gauge:hover .ring::before { transform:scale(1.1); box-shadow:inset 0 0 8px rgba(243,238,226,0.15); }
+  .ring b { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'Anton',sans-serif; font-size:1.05rem; letter-spacing:0.02em; transition:transform 0.3s; }
+  #gauge:hover .ring b { transform:scale(1.08); }
   #gauge small { display:block; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:0.52rem; letter-spacing:0.1em; text-transform:uppercase; background:var(--ink); color:var(--paper); padding:3px 6px; }
   @media (max-width:600px) { #gauge { transform:scale(0.82); transform-origin:bottom right; } }
 
@@ -272,7 +274,7 @@
   .letter .rel { font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--soft); }
 
   /* ============ CH.09 APPLY ============ */
-  #apply-inner { background:var(--ink); color:var(--paper); border-radius:8px; padding:clamp(2.5rem,6vw,4.5rem); padding-bottom:1.4rem; text-align:center; position:relative; overflow:hidden; display:flex; flex-direction:column; }
+  #apply-inner { background:var(--ink); color:var(--paper); border-radius:8px; padding:clamp(2.5rem,6vw,4.5rem); padding-bottom:1.4rem; text-align:center; position:relative; overflow:visible; display:flex; flex-direction:column; }
   #apply-inner .ch-kicker { color:var(--yellow); }
   #apply-inner h2 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(2.2rem,7vw,4.5rem); line-height:0.98; margin-bottom:1.2rem; }
   #apply-inner h2 em { font-style:normal; color:var(--yellow); }
@@ -285,7 +287,7 @@
   .pz.ig:hover { background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); border-color:#fd5949; }
   .pz.sp:hover { background:#1db954; border-color:#1db954; color:var(--ink); }
   .pz.li:hover { background:#0a66c2; border-color:#0a66c2; }
-  .accepting { margin-top:3.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.05em; line-height:1.8; color:rgba(243,238,226,0.45); text-transform:uppercase; }
+  .accepting { margin-top:3.5rem; font-family:'Inter',sans-serif; font-size:0.78rem; letter-spacing:0.1em; line-height:2; color:rgba(243,238,226,0.45); text-transform:uppercase; }
 
   footer { padding:2.4rem 1.5rem 3rem; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--soft); text-transform:uppercase; }
 
@@ -591,26 +593,23 @@
 <!-- ============ CH.08 REFERENCES ============ -->
 <section class="chapter" id="ch9" data-ch="09" data-title="REFERENCES">
   <div class="ch-head">
-    <div class="ch-kicker">Testimonials — unpaid, unprompted</div>
+    <div class="ch-kicker">Word of mouth — the honest edition</div>
     <div class="ch-num">09</div>
-    <h2 class="ch-title">References <mark>on file</mark></h2>
+    <h2 class="ch-title">What people <mark>said about me</mark></h2>
   </div>
   <div class="letters">
     <div class="letter reveal">
-      <p>"Kind, genuine, and curious! He will always check up on me when I’ve gone MIA (so you can be a busy ambitious girl and he will proactively support you and be patient and respectful about your priorities— bare minimum but not so common). He will share things or invite you to join in on stuff you enjoy—he remembers what you like and is intentionally interested in it. I also appreciate how inquisitive he is about everything, which makes him a fun person to be around since he’ll throw random trivia at you. 10/10 cooking skills. Highly recommend."</p>
+      <p>"Kind, genuine, and curious! He will always check up on me when I've gone MIA (so you can be a busy ambitious girl and he will proactively support you and be patient and respectful about your priorities— bare minimum but not so common). He will share things or invite you to join in on stuff you enjoy—he remembers what you like and is intentionally interested in it. I also appreciate how inquisitive he is about everything, which makes him a fun person to be around since he'll throw random trivia at you. 10/10 cooking skills. Highly recommend."</p>
       <div class="sig">— Tanya</div>
-      <div class="rel">Friend (Known her since middle school)</div>
     </div>
     <div class="letter reveal">
       <p>"If you're looking for someone who can have a genuinely meaningful conversation one minute and have you laughing over the most random fact the next, he's your person. He somehow manages to keep things both thoughtful and light, and that's one of the reasons we've stayed friends from college through to now, even living in different countries. 
 He's the kind of friend who quietly shows up. If I've disappeared into work or life for a while, he'll be the one checking in through texts and initiating group calls with friends. He's definitely a keeper :)"</p>
       <div class="sig">— Sejal</div>
-      <div class="rel">Friend</div>
     </div>
     <div class="letter reveal">
-      <p>"Cooks amazing foooood!!! He’s also extremely smart and helped my friends a lot in their assignments. Is really good at photography but never clicked my photos."</p>
+      <p>"Cooks amazing foooood!!! He's also extremely smart and helped my friends a lot in their assignments. Is really good at photography but never clicked my photos."</p>
       <div class="sig">— Sejal</div>
-      <div class="rel">Friend</div>
     </div>
   </div>
 </section>
@@ -619,7 +618,7 @@ He's the kind of friend who quietly shows up. If I've disappeared into work or l
 <section class="chapter" id="ch10" data-ch="10" data-title="APPLY">
   <div id="apply-inner" class="reveal">
     <div class="ch-kicker">Final page of the file</div>
-    <h2>Apply <em>within</em></h2>
+    <h2>Join <em>me</em></h2>
     <p>Made it this far? Either you really like cats or you're genuinely interested — I'm hoping both. Drop me a message. I respond to all of them, even the weird ones.</p>
     <div class="pillz">
       <a href="mailto:hemant.rattey@gmail.com" class="pz em">
@@ -639,11 +638,11 @@ He's the kind of friend who quietly shows up. If I've disappeared into work or l
         LinkedIn
       </a>
     </div>
-    <p class="accepting">CURRENTLY ACCEPTING: dinner dates · game-day guests · concert plus-ones · cat enthusiasts</p>
+    <!-- <p class="accepting">CURRENTLY ACCEPTING: dinner dates · game-day guests · concert plus-ones · cat enthusiasts</p> -->
   </div>
 </section>
 
-<footer>© 2026 HEMANT RATTEY · MADE WITH ❤️ AND EXTREMELY STRONG OPINIONS ABOUT SPORTS</footer>
+<footer>© 2026 HEMANT RATTEY · MADE WITH ❤️</footer>
 
 <script>
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -676,7 +675,7 @@ He's the kind of friend who quietly shows up. If I've disappeared into work or l
       railLinks.forEach(a => a.classList.toggle('on', a.dataset.ch === ch));
       whereTag.innerHTML = `CH.<b>${ch}</b> — ${title}`;
     });
-  }, { rootMargin:'-40% 0px -55% 0px' });
+  }, { rootMargin:'-35% 0px -40% 0px' });
   chapters.forEach(c => chObserver.observe(c));
 
   /* ---- reveal on scroll ---- */
