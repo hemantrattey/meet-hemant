@@ -126,7 +126,7 @@
 
   /* cover polaroid — your headshot goes here */
   .cover-pol {
-    position:absolute; right:4.5%; top:27%; width:min(300px,36vw); rotate:3.5deg;
+    position:absolute; right:4.5%; top:27%; width:min(360px,42vw); rotate:3.5deg;
     background:#fff; border:1px solid rgba(23,19,13,0.18); padding:12px 12px 0;
     box-shadow:0 18px 40px rgba(23,19,13,0.22);
     animation:rise 0.9s cubic-bezier(0.22,1,0.36,1) 0.7s both;
@@ -138,7 +138,7 @@
   .cover-pol .img .empty span { font-size:2.2rem; opacity:0.5; }
   .cover-pol .img .empty p { font-family:'IBM Plex Mono',monospace; font-size:0.56rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--soft); }
   .cover-pol figcaption { font-family:'Caveat',cursive; font-weight:700; font-size:1.35rem; padding:0.7rem 0.2rem 0.8rem; }
-  @media (max-width:980px) { .cover-pol { position:static; rotate:-2deg; margin-top:2.4rem; align-self:center; width:min(320px,86vw); animation-delay:0.85s; } }
+  @media (max-width:980px) { .cover-pol { position:static; rotate:-2deg; margin-top:2.4rem; align-self:center; width:min(360px,88vw); animation-delay:0.85s; } }
 
   .cover-foot { position:absolute; bottom:1.6rem; left:1.5rem; right:1.5rem; display:flex; justify-content:space-between; align-items:flex-end; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.14em; color:var(--soft); text-transform:uppercase; animation:rise 1s ease 1.2s both; }
   .barcode { width:120px; height:30px; background:repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 7px, transparent 7px 9px, var(--ink) 9px 10px, transparent 10px 13px); }
@@ -155,16 +155,16 @@
   .deck { display:flex; flex-direction:column; }
   .panel {
     position:sticky; background:var(--card); border:2.5px solid var(--ink); box-shadow:var(--hard-shadow);
-    padding:2.4rem; margin-bottom:4.5rem; border-radius:4px;
+    padding:3rem; margin-bottom:4.5rem; border-radius:4px; min-height:15rem; display:flex; flex-direction:column; justify-content:center;
   }
   .panel:nth-child(odd) { rotate:-0.6deg; }
   .panel:nth-child(even) { rotate:0.6deg; }
-  .panel-tag { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; background:var(--ink); color:var(--paper); padding:5px 10px; margin-bottom:1.1rem; }
+  .panel-tag { display:inline-block; align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; background:var(--ink); color:var(--paper); padding:5px 10px; margin-bottom:1.1rem; }
   .panel-tag.r { background:var(--red); } .panel-tag.b { background:var(--blue); } .panel-tag.g { background:var(--green); }
-  .panel h3 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(1.3rem,3.4vw,2rem); line-height:1.08; margin-bottom:0.8rem; }
-  .panel p { color:var(--soft); max-width:640px; font-size:0.95rem; }
-  .panel .big-hand { font-family:'Caveat',cursive; font-weight:700; font-size:clamp(1.9rem,4.6vw,3.1rem); line-height:1.15; color:var(--ink); max-width:none; }
-  .big-hand em { font-style:normal; color:var(--red); }
+  .panel h3 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(1.4rem,3.6vw,2.2rem); line-height:1.08; margin-bottom:0.9rem; }
+  .panel p { color:var(--soft); max-width:640px; font-size:1rem; }
+  .panel.wide p { max-width:none; }
+  .panel.flow { position:relative; }
 
   /* ============ CH.02 CATS ============ */
   .pols { display:flex; gap:2.5rem; flex-wrap:wrap; justify-content:center; }
@@ -209,18 +209,7 @@
   .behance-z { margin-top:1rem; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; }
   .behance-z a { color:var(--blue); font-weight:600; }
 
-  /* ============ CH.04 SPORTS ============ */
-  .cards-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1.1rem; }
-  .scard {
-    background:var(--card); border:2.5px solid var(--ink); box-shadow:var(--hard-shadow); border-radius:4px;
-    padding:1.4rem 1rem 1.1rem; text-align:center; transition:transform 0.18s, box-shadow 0.18s; cursor:default; position:relative; overflow:hidden;
-  }
-  .scard:hover { transform:translate(-3px,-3px) rotate(-1deg); box-shadow:8px 8px 0 var(--ink); }
-  .scard .e { font-size:2.1rem; display:block; margin-bottom:0.5rem; }
-  .scard .n { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:0.95rem; letter-spacing:0.04em; }
-  .scard::after { content:'EST. FANDOM: LIFELONG'; position:absolute; bottom:4px; left:0; right:0; font-family:'IBM Plex Mono',monospace; font-size:0.42rem; letter-spacing:0.14em; color:rgba(23,19,13,0.35); }
-
-  /* ============ CH.05 MUSIC ============ */
+  /* ============ CH.04 MUSIC ============ */
   .music-z { display:grid; grid-template-columns:1.05fr 0.95fr; gap:2.6rem; align-items:stretch; }
   @media (max-width:840px){ .music-z { grid-template-columns:1fr; } }
   .stub {
@@ -268,7 +257,6 @@
   .letter { background:#fff; border:1px solid rgba(23,19,13,0.2); box-shadow:0 16px 36px rgba(23,19,13,0.16); padding:1.9rem 1.7rem 1.5rem; position:relative; transition:transform 0.25s; }
   .letter:nth-child(odd){ rotate:-0.8deg; } .letter:nth-child(even){ rotate:0.9deg; }
   .letter:hover { transform:translateY(-6px) rotate(0); }
-  /* .letter::before { content:'RE: HEMANT'; position:absolute; top:10px; right:12px; font-family:'IBM Plex Mono',monospace; font-size:0.52rem; letter-spacing:0.16em; color:rgba(23,19,13,0.35); } */
   .letter p { font-size:0.9rem; color:rgba(23,19,13,0.78); margin-bottom:1.1rem; }
   .letter .sig { font-family:'Caveat',cursive; font-weight:700; font-size:1.5rem; line-height:1; }
   .letter .rel { font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--soft); }
@@ -287,7 +275,6 @@
   .pz.ig:hover { background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); border-color:#fd5949; }
   .pz.sp:hover { background:#1db954; border-color:#1db954; color:var(--ink); }
   .pz.li:hover { background:#0a66c2; border-color:#0a66c2; }
-  .accepting { margin-top:3.5rem; font-family:'Inter',sans-serif; font-size:0.78rem; letter-spacing:0.1em; line-height:2; color:rgba(243,238,226,0.45); text-transform:uppercase; }
 
   footer { padding:2.4rem 1.5rem 3rem; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--soft); text-transform:uppercase; }
 
@@ -309,16 +296,15 @@
   <a href="#ch1" data-ch="01"><span class="pip"></span><span>The pitch</span></a>
   <a href="#ch2" data-ch="02"><span class="pip"></span><span>The managers</span></a>
   <a href="#ch3" data-ch="03"><span class="pip"></span><span>The lens</span></a>
-  <a href="#ch4" data-ch="04"><span class="pip"></span><span>Sports desk</span></a>
-  <a href="#ch5" data-ch="05"><span class="pip"></span><span>The soundtrack</span></a>
-  <a href="#ch6" data-ch="06"><span class="pip"></span><span>Genuinely into</span></a>
-  <a href="#ch7" data-ch="07"><span class="pip"></span><span>The checklist</span></a>
-  <a href="#ch8" data-ch="08"><span class="pip"></span><span>Full disclosure</span></a>
-  <a href="#ch9" data-ch="09"><span class="pip"></span><span>References</span></a>
-  <a href="#ch10" data-ch="10"><span class="pip"></span><span>Apply</span></a>
+  <a href="#ch4" data-ch="04"><span class="pip"></span><span>The soundtrack</span></a>
+  <a href="#ch5" data-ch="05"><span class="pip"></span><span>Genuinely into</span></a>
+  <a href="#ch6" data-ch="06"><span class="pip"></span><span>The checklist</span></a>
+  <a href="#ch7" data-ch="07"><span class="pip"></span><span>Full disclosure</span></a>
+  <a href="#ch8" data-ch="08"><span class="pip"></span><span>References</span></a>
+  <a href="#ch9" data-ch="09"><span class="pip"></span><span>Apply</span></a>
 </nav>
 
-<a id="gauge" href="#ch10" title="Compatibility so far — tap to apply">
+<a id="gauge" href="#ch9" title="Compatibility so far — tap to apply">
   <div class="ring" id="ring"><b id="pct">0%</b></div>
   <small id="verdict">STRANGER</small>
 </a>
@@ -331,14 +317,14 @@
     <span><i>STATUS:</i> <b style="color:var(--green)">ACCEPTING APPLICATIONS</b></span>
   </div>
   <h1 class="cover-name">Hemant<br>Rattey</h1>
-  <p class="cover-role"><b>AI engineer by day, concert addict by night.</b> Cat dad with a love for sports, cooking, live music, and occasionally disappearing behind a camera again. This file contains everything you need to know.</p>
+  <p class="cover-role"><b>AI engineer by day, overly enthusiastic about everything I love by night.</b> Big on live music, cooking for people, sports, spontaneous plans, and finding someone who makes ordinary weekdays feel like something worth remembering.</p>
   <div class="cover-cta">
     <a href="#ch1" class="zbtn solid">Review the file ↓</a>
-    <a href="#ch10" class="zbtn outline">💌 Skip to apply</a>
+    <a href="#ch9" class="zbtn outline">💌 Skip to apply</a>
   </div>
   <figure class="cover-pol">
     <div class="img">
-      <img src="images/hemant-crop.jpg" alt="Hemant Rattey">
+      <img src="images/hemant-crop.jpg" alt="Hemant Rattey" fetchpriority="high">
     </div>
     <figcaption>me, allegedly →</figcaption>
   </figure>
@@ -351,8 +337,8 @@
 <!-- facts strip -->
 <div class="strip" aria-hidden="true">
   <div class="strip-in">
-    <span>AI ENGINEER</span><span class="y">★</span><span>EX-PRO PHOTOGRAPHER</span><span class="y">★</span><span>CAT DAD ×2</span><span class="y">★</span><span>COOKS TOO MUCH</span><span class="y">★</span><span>CONCERT ADDICT</span><span class="y">★</span><span>SPORTS OPINIONS INCLUDED</span><span class="y">★</span>
-    <span>AI ENGINEER</span><span class="y">★</span><span>EX-PRO PHOTOGRAPHER</span><span class="y">★</span><span>CAT DAD ×2</span><span class="y">★</span><span>COOKS TOO MUCH</span><span class="y">★</span><span>CONCERT ADDICT</span><span class="y">★</span><span>SPORTS OPINIONS INCLUDED</span><span class="y">★</span>
+    <span>AI ENGINEER</span><span class="y">★</span><span>EX-PRO PHOTOGRAPHER</span><span class="y">★</span><span>CAT DAD ×2</span><span class="y">★</span><span>COOKS TOO MUCH</span><span class="y">★</span><span>CONCERT ADDICT</span><span class="y">★</span><span>SPORTS OPINIONS INCLUDED</span><span class="y">★</span><span>ALWAYS DOWN FOR DRINKS</span><span class="y">★</span><span>GOOD TIMES WITH FRIENDS</span><span class="y">★</span>
+    <span>AI ENGINEER</span><span class="y">★</span><span>EX-PRO PHOTOGRAPHER</span><span class="y">★</span><span>CAT DAD ×2</span><span class="y">★</span><span>COOKS TOO MUCH</span><span class="y">★</span><span>CONCERT ADDICT</span><span class="y">★</span><span>SPORTS OPINIONS INCLUDED</span><span class="y">★</span><span>ALWAYS DOWN FOR DRINKS</span><span class="y">★</span><span>GOOD TIMES WITH FRIENDS</span><span class="y">★</span>
   </div>
 </div>
 
@@ -365,24 +351,25 @@
     <p class="lede">Six cards. Keep scrolling — they stack. Like my feelings for whoever finally watches a full F1 race with me.</p>
   </div>
   <div class="deck" id="deck">
-    <div class="panel">
-      <span class="panel-tag r">Mission statement</span>
-      <p class="big-hand">"I'm looking for someone to watch the game with, cook too much food for, and drag to <em>concerts on a Tuesday night</em>."</p>
+    <div class="panel wide flow">
+      <span class="panel-tag b">Who I am</span>
+      <h3>The kind of person who actually shows up</h3>
+      <p>I'm curious about pretty much everything, and I tend to get genuinely invested in the people I care about. I'll remember the random story you told me three weeks ago, send you something because it made me think of you, and probably ask way too many questions about whatever you're currently obsessed with. I like making plans, but I'm equally happy with a spontaneous "there are tickets tonight" decision. I'm ambitious and pretty driven, but I don't want my life to be all work. I care a lot about my friends, love hosting people, cook like I'm feeding twice as many people as are actually coming, and will happily turn an ordinary Tuesday into dinner, drinks, a game, or a last-minute concert. I'm a little intense about the things I love — music, sports, food, photography — but I think enthusiasm is a good quality to have. Mostly, I'm looking for something that feels like having a best friend you also really want to kiss. Someone to build a life with, laugh at stupid things with, and keep choosing each other when life gets busy.</p>
     </div>
     <div class="panel">
-      <span class="panel-tag b">Who I am</span>
-      <h3>Former freelance photographer, full-time cat servant</h3>
-      <p>I spent years shooting professionally — concerts, streets, portraits, food. Now I cook elaborate meals nobody asked for, yell at sports screens, and let two cats run my entire life. Zero regrets.</p>
+      <span class="panel-tag r">Mission statement</span>
+      <h3>What I'm actually looking for</h3>
+      <p>Someone to build a life with — preferably one involving good food, ridiculous concerts, spontaneous plans, and a lot of laughing at things that aren't actually that funny.</p>
     </div>
     <div class="panel">
       <span class="panel-tag">Plot twist</span>
       <h3>I can name every player on six different teams</h3>
-      <p>Cricket, NBA, Premier League, F1, NFL, golf — I watch all of it and I have opinions. Strong ones. This is a feature, not a bug.</p>
+      <p>Cricket, Basketball, Soccer, F1 — I watch all of it and I have opinions. Strong ones. This is a feature, not a bug.</p>
     </div>
     <div class="panel">
       <span class="panel-tag g">Value proposition</span>
-      <h3>What I bring to the table (literally)</h3>
-      <p>Homemade Sunday brunch, game-day snacks that go way too hard, a Spotify queue that always slaps, and the ability to cook a full three-course meal while explaining why that referee was categorically wrong.</p>
+      <h3>I notice the little things.</h3>
+      <p>I remember what you said you were stressed about last week. I'll send you a song because I think you'll like it. I'll ask follow-up questions about the thing you're excited about even if I know absolutely nothing about it. And if you've had a terrible day, there's probably food involved.</p>
     </div>
     <div class="panel">
       <span class="panel-tag r">Non-negotiable</span>
@@ -457,18 +444,29 @@
         <div class="img"><img src="images/Uneven_HighRes-17-web.jpg" alt="Crowd at an Uneven Music show in Delhi" loading="lazy" decoding="async" draggable="false"></div>
         <figcaption>Uneven Music, Delhi '20</figcaption>
       </figure>
-      <!-- Placeholder frames — swap the .empty div for an <img> like the frames above -->
       <figure class="frame">
-        <div class="img"><div class="empty"><span>📸</span><p>Add your photo</p></div></div>
-        <figcaption>your caption here…</figcaption>
+        <div class="img"><img src="images/nina-suerte-web.jpg" alt="Nina Suerte performing live in Delhi" loading="lazy" decoding="async" draggable="false"></div>
+        <figcaption>Nina Suerte, Delhi '20</figcaption>
       </figure>
       <figure class="frame">
-        <div class="img"><div class="empty"><span>🍜</span><p>Food shot goes here</p></div></div>
-        <figcaption>the famous ramen…</figcaption>
+        <div class="img"><img src="images/vanmoon-web.jpg" alt="Vanmoon performing live in Delhi" loading="lazy" decoding="async" draggable="false"></div>
+        <figcaption>Vanmoon, Delhi '20</figcaption>
       </figure>
       <figure class="frame">
-        <div class="img"><div class="empty"><span>🌆</span><p>Street shot goes here</p></div></div>
-        <figcaption>somewhere downtown…</figcaption>
+        <div class="img"><img src="images/humayuns-tomb-web.jpg" alt="Humayun's Tomb, Delhi" loading="lazy" decoding="async" draggable="false"></div>
+        <figcaption>Humayun's Tomb, Delhi '18</figcaption>
+      </figure>
+      <figure class="frame">
+        <div class="img"><img src="images/wizards-pelicans-web.jpg" alt="Washington Wizards vs New Orleans Pelicans game, Washington DC" loading="lazy" decoding="async" draggable="false"></div>
+        <figcaption>Wizards vs Pelicans, Washington DC '22</figcaption>
+      </figure>
+      <figure class="frame">
+        <div class="img"><img src="images/olly-2018-web.jpg" alt="Olly the cat, Delhi" loading="lazy" decoding="async" draggable="false"></div>
+        <figcaption>Olly, Delhi '18</figcaption>
+      </figure>
+      <figure class="frame">
+        <div class="img"><img src="images/mendon-ponds-web.jpg" alt="Mendon Ponds Park, Rochester" loading="lazy" decoding="async" draggable="false"></div>
+        <figcaption>Mendon Ponds, Rochester '23</figcaption>
       </figure>
     </div>
   </div>
@@ -477,36 +475,11 @@
   </div>
 </section>
 
-<!-- ============ CH.04 SPORTS DESK ============ -->
-<section class="chapter" id="ch4" data-ch="04" data-title="SPORTS DESK">
-  <div class="ch-head">
-    <div class="ch-kicker">Passion level: extreme</div>
-    <div class="ch-num">04</div>
-    <h2 class="ch-title">I watch <mark>all of it</mark></h2>
-    <p class="lede">Cricket, basketball, F1, soccer, NFL, golf — for every one of them I have a team, I have opinions, and I have definitely stayed up until 3am watching.</p>
-  </div>
-  <div class="cards-row reveal">
-    <div class="scard"><span class="e">🏏</span><span class="n">Cricket</span></div>
-    <div class="scard"><span class="e">🏀</span><span class="n">Basketball</span></div>
-    <div class="scard"><span class="e">🏎️</span><span class="n">Formula 1</span></div>
-    <div class="scard"><span class="e">⚽</span><span class="n">Soccer</span></div>
-    <div class="scard"><span class="e">🏈</span><span class="n">NFL</span></div>
-    <div class="scard"><span class="e">⛳</span><span class="n">Golf</span></div>
-  </div>
-</section>
-
-<div class="strip" style="rotate:-1deg; scale:1.01; margin:1.5rem 0;" aria-hidden="true">
-  <div class="strip-in" style="animation-duration:24s;">
-    <span>🏈 NFL</span><span>🏀 NBA</span><span>⚽ PREMIER LEAGUE</span><span>🎾 WIMBLEDON</span><span>🏎️ FORMULA 1</span><span>⚾ MLB</span><span>🏒 NHL</span><span>🏉 RUGBY</span><span>🥊 BOXING</span><span>🏊 OLYMPICS</span><span class="y">🎱 SNOOKER AT 2AM</span><span>🏌️ THE MASTERS</span>
-    <span>🏈 NFL</span><span>🏀 NBA</span><span>⚽ PREMIER LEAGUE</span><span>🎾 WIMBLEDON</span><span>🏎️ FORMULA 1</span><span>⚾ MLB</span><span>🏒 NHL</span><span>🏉 RUGBY</span><span>🥊 BOXING</span><span>🏊 OLYMPICS</span><span class="y">🎱 SNOOKER AT 2AM</span><span>🏌️ THE MASTERS</span>
-  </div>
-</div>
-
-<!-- ============ CH.05 SOUNDTRACK ============ -->
-<section class="chapter" id="ch5" data-ch="05" data-title="THE SOUNDTRACK">
+<!-- ============ CH.04 SOUNDTRACK ============ -->
+<section class="chapter" id="ch4" data-ch="04" data-title="THE SOUNDTRACK">
   <div class="ch-head">
     <div class="ch-kicker">Currently obsessed with</div>
-    <div class="ch-num">05</div>
+    <div class="ch-num">04</div>
     <h2 class="ch-title">I live for <mark>live music</mark></h2>
     <p class="lede">There is nothing — nothing — like being in a crowd when the song hits live. Fred again is at the top of that list. The man makes music that feels like a feeling you forgot you had. Sweaty basements, rooftops, arena shows — give me all of it.</p>
   </div>
@@ -527,74 +500,72 @@
   </div>
 </section>
 
-<!-- ============ CH.06 GENUINELY INTO ============ -->
-<section class="chapter" id="ch6" data-ch="06" data-title="GENUINELY INTO">
+<!-- ============ CH.05 GENUINELY INTO ============ -->
+<section class="chapter" id="ch5" data-ch="05" data-title="GENUINELY INTO">
   <div class="ch-head">
     <div class="ch-kicker">Skills &amp; passions</div>
-    <div class="ch-num">06</div>
+    <div class="ch-num">05</div>
     <h2 class="ch-title">Genuinely <mark>into</mark></h2>
   </div>
   <div class="stickers reveal">
-    <span class="stk hot">🍝 Cooking (daily)</span>
+    <span class="stk hot">🍝 Cooking for people</span>
     <span class="stk hot">📸 Photography</span>
-    <span class="stk hot">🎮 Video games</span>
-    <span class="stk hot">🏟️ Live sports</span>
-    <span class="stk hot">🎵 Concerts</span>
-    <span class="stk">☕ Specialty coffee</span>
-    <span class="stk">🐱 Cat content, always</span>
-    <span class="stk">🕹️ RPGs &amp; strategy</span>
-    <span class="stk">🎧 Electronic &amp; indie</span>
-    <span class="stk hot">🍕 Pizza from scratch</span>
-    <span class="stk">🎬 Film photography</span>
-    <span class="stk">🌶️ Spicy food challenges</span>
-    <span class="stk">🎤 Karaoke (aggressively)</span>
-    <span class="stk">🍷 Natural wine nights</span>
-    <span class="stk">🌮 Taco Tuesday (sacred)</span>
+    <span class="stk">🎮 Video games</span>
+    <span class="stk hot">🏟️ Sports</span>
+    <span class="stk hot">🎵 Live music & concerts</span>
+    <span class="stk-hot">🐱 Cats, obviously</span>
+    <span class="stk">✈️ Trips built around experiences</span>
+    <span class="stk hot">🥂 Drinks & good nights out</span>
+    <span class="stk">🖋️ Tattoos</span>
+    <span class="stk">😂 Stand-up & stupidly funny people</span>
+    <span class="stk">😌 Baking</span>
+
+
   </div>
 </section>
 
-<!-- ============ CH.07 CHECKLIST ============ -->
-<section class="chapter" id="ch7" data-ch="07" data-title="THE CHECKLIST">
+<!-- ============ CH.06 CHECKLIST ============ -->
+<section class="chapter" id="ch6" data-ch="06" data-title="THE CHECKLIST">
   <div class="ch-head">
-    <div class="ch-kicker">The search — what I'm looking for</div>
-    <div class="ch-num">07</div>
+    <div class="ch-kicker">The search — what makes me click</div>
+    <div class="ch-num">06</div>
     <h2 class="ch-title">The <mark>checklist</mark></h2>
   </div>
   <div class="check-grid">
-    <div class="chk reveal"><div class="box"></div><div><strong>A cat person (mandatory)</strong><span>Doesn't have to own one. But must be willing to earn the trust of two very judgmental animals over several visits.</span></div></div>
-    <div class="chk reveal"><div class="box"></div><div><strong>A concert person</strong><span>Spontaneous "there are tickets for tonight" energy is genuinely the most attractive quality a person can have.</span></div></div>
-    <div class="chk reveal"><div class="box"></div><div><strong>Sports tolerant at minimum</strong><span>You don't have to love it. But if you can watch one game with me and genuinely enjoy snacks together, we're building something.</span></div></div>
-    <div class="chk reveal"><div class="box"></div><div><strong>An enthusiastic eater</strong><span>I cook a lot and I love feeding people. Let me cook for you. This is not a request, it's a love language.</span></div></div>
-    <div class="chk reveal"><div class="box"></div><div><strong>Gamer or gamer-adjacent</strong><span>You don't have to play. Just don't resent the controller. Co-op games are an ideal third date, just saying.</span></div></div>
-    <div class="chk reveal"><div class="box"></div><div><strong>Kind and real</strong><span>How you treat people when nothing's at stake tells me everything I need to know about a person.</span></div></div>
+    <div class="chk reveal"><div class="box"></div><div><strong>A cat person — highly encouraged</strong><span>You don't have to own one. But eventually you'll need to win over two extremely judgmental animals. Their approval is unfortunately non-negotiable.</span></div></div>
+    <div class="chk reveal"><div class="box"></div><div><strong>Curious about things</strong><span>You don't have to know everything. I just really like people who get excited about something — a weird hobby, a random fact, a new restaurant, whatever. Tell me what you've been obsessed with lately.</span></div></div>
+    <div class="chk reveal"><div class="box"></div><div><strong>Up for spontaneous plans</strong><span>If I text you “there are tickets tonight,” I would love for your first response to occasionally be “what time?”</span></div></div>
+    <div class="chk reveal"><div class="box"></div><div><strong>A good relationship with food</strong><span>I cook a lot. You don't need to cook, but you do need to be willing to eat what comes out of my kitchen. I tend to show affection through excessive amounts of food.</span></div></div>
+    <div class="chk reveal"><div class="box"></div><div><strong>Has a life of their own</strong><span>Ambitious, independent, passionate about something, and comfortable having their own world. I want someone to build a life with, not someone whose entire life becomes mine.</span></div></div>
+    <div class="chk reveal"><div class="box"></div><div><strong>Kind and real</strong><span>Probably the most important one. How you treat people when there's nothing to gain from it tells me almost everything I need to know.</span></div></div>
   </div>
 </section>
 
-<!-- ============ CH.08 FULL DISCLOSURE ============ -->
-<section class="chapter" id="ch8" data-ch="08" data-title="FULL DISCLOSURE">
+<!-- ============ CH.07 FULL DISCLOSURE ============ -->
+<section class="chapter" id="ch7" data-ch="07" data-title="FULL DISCLOSURE">
   <div class="ch-head">
     <div class="ch-kicker">About me — the honest edition</div>
-    <div class="ch-num">08</div>
+    <div class="ch-num">07</div>
     <h2 class="ch-title">Full <mark>disclosure</mark></h2>
     <p class="lede">Green flags and honest warnings — everything you'd normally find out by month two, disclosed up front.</p>
   </div>
   <div class="flag-grid">
-    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>Will cook for you, always</strong><p>It's how I show love. If you're coming over, there will be too much food. This is a guarantee.</p></div>
-    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>Great concert company</strong><p>Know when to lose it completely and when to just stand there and feel it. Both moods are valid.</p></div>
-    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>Will hype you endlessly</strong><p>Your wins are my wins. I will tell strangers how impressive you are. This will not stop.</p></div>
-    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>Calm under pressure</strong><p>Decades of sports watching. I can stay composed when it matters. Mostly.</p></div>
-    <div class="fcard r reveal"><span class="lbl">RED FLAG</span><strong>I talk to the cats</strong><p>Full conversations. With voices. About their day. About my day. This will not stop either.</p></div>
-    <div class="fcard r reveal"><span class="lbl">RED FLAG</span><strong>Game day is sacred</strong><p>I will reschedule nearly anything for a final. I'm not proud of this. I'm just honest about it.</p></div>
-    <div class="fcard r reveal"><span class="lbl">RED FLAG</span><strong>The aux cord is earned</strong><p>The Spotify queue is a carefully curated ecosystem. Guest access granted with demonstrated good taste.</p></div>
+    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>I remember the little things</strong><p>Tell me something once and there's a decent chance I'll remember it three weeks later. If you're important to me, I'm going to pay attention.</p></div>
+    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>Your wins become my wins</strong><p>I genuinely like seeing people I care about succeed. I will celebrate your promotion, your weird side project, your 5K, your good presentation, whatever it is. Probably louder than necessary.</p></div>
+    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>I show up</strong><p>If you're having a rough week, I won't necessarily know how to fix it. But I'll check in, bring food, listen to you complain, and make sure you know you're not dealing with it alone.</p></div>
+    <div class="fcard g reveal"><span class="lbl">GREEN FLAG</span><strong>I will make ordinary days feel like something</strong><p>Doesn't always need to be a big date. Sometimes it's cooking dinner, watching a game, finding a new bar, or deciding at 7pm that we should go somewhere.</p></div>
+    <div class="fcard r reveal"><span class="lbl">RED FLAG</span><strong>I can be a little intense</strong><p>When I love something, I really love it. Music, food, sports, work, people. “Casually interested” isn't really my setting.</p></div>
+    <div class="fcard r reveal"><span class="lbl">RED FLAG</span><strong>I talk to animals</strong><p>Full conversations. Different voices. Zero shame. They have opinions and unfortunately I respect them.</p></div>
+    <div class="fcard r reveal"><span class="lbl">RED FLAG</span><strong>I will feed you against your will</strong><p>ou said you weren't hungry. I heard “give me twenty minutes and I'll make something.”</p></div>
     <div class="fcard r reveal"><span class="lbl">RED FLAG</span><strong>Kitchen takeover tendencies</strong><p>If I'm cooking, I'm in charge. You are welcome to assist via moral support and mandatory tasting.</p></div>
   </div>
 </section>
 
 <!-- ============ CH.08 REFERENCES ============ -->
-<section class="chapter" id="ch9" data-ch="09" data-title="REFERENCES">
+<section class="chapter" id="ch8" data-ch="08" data-title="REFERENCES">
   <div class="ch-head">
-    <div class="ch-kicker">Word of mouth — the honest edition</div>
-    <div class="ch-num">09</div>
+    <div class="ch-kicker">Apparently I'm not completely making this up</div>
+    <div class="ch-num">08</div>
     <h2 class="ch-title">What people <mark>said about me</mark></h2>
   </div>
   <div class="letters">
@@ -615,11 +586,11 @@ He's the kind of friend who quietly shows up. If I've disappeared into work or l
 </section>
 
 <!-- ============ CH.09 APPLY ============ -->
-<section class="chapter" id="ch10" data-ch="10" data-title="APPLY">
+<section class="chapter" id="ch9" data-ch="09" data-title="APPLY">
   <div id="apply-inner" class="reveal">
-    <div class="ch-kicker">Final page of the file</div>
-    <h2>Join <em>me</em></h2>
-    <p>Made it this far? Either you really like cats or you're genuinely interested — I'm hoping both. Drop me a message. I respond to all of them, even the weird ones.</p>
+    <div class="ch-kicker">So... what are we waiting for?</div>
+    <h2>Let's find out</h2>
+    <p>If you've made it this far, I think we should at least get a drink. Worst case, we discover we're better as friends, eat something good, and I send you home with a song recommendation. Best case? Well, that's kind of the point of this whole website. Come say hi.</p>
     <div class="pillz">
       <a href="mailto:hemant.rattey@gmail.com" class="pz em">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -638,7 +609,6 @@ He's the kind of friend who quietly shows up. If I've disappeared into work or l
         LinkedIn
       </a>
     </div>
-    <!-- <p class="accepting">CURRENTLY ACCEPTING: dinner dates · game-day guests · concert plus-ones · cat enthusiasts</p> -->
   </div>
 </section>
 
@@ -683,12 +653,12 @@ He's the kind of friend who quietly shows up. If I've disappeared into work or l
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold:0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  document.querySelectorAll('.cards-row,.check-grid,.flag-grid,.letters,.stickers,.pols').forEach(grid => {
+  document.querySelectorAll('.check-grid,.flag-grid,.letters,.stickers,.pols').forEach(grid => {
     [...grid.children].forEach((c,i) => c.style.transitionDelay = (i % 8) * 0.06 + 's');
   });
 
   /* ---- sticky deck offsets ---- */
-  document.querySelectorAll('#deck .panel').forEach((p,i) => p.style.top = (84 + i * 16) + 'px');
+  document.querySelectorAll('#deck .panel').forEach((p,i) => { if (!p.classList.contains('flow')) p.style.top = (84 + i * 16) + 'px'; });
 
   /* ---- filmstrip drag to scroll ---- */
   const film = document.getElementById('film');
